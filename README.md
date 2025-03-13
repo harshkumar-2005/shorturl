@@ -5,11 +5,11 @@ A simple URL shortener built with Flask and SQLite.
 ## Installation
 1. Clone this repository:
    ```
-   git clone https://github.com/yourrepo/url-shortener.git
+    https://github.com/harshkumar-2005/shorturl
    ```
 2. Navigate to the directory:
    ```
-   cd url-shortener
+   cd shorturl
    ```
 3. Install dependencies:
    ```
