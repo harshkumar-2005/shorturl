@@ -2,8 +2,30 @@ from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 import random
 import string
+import sqlite3
+
+
+
 
 app = Flask(__name__)
+
+
+def create_tables():
+    connection = sqlite3.connect("database.db")
+    cursor = connection.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS urls (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            original_url TEXT NOT NULL,
+            short_code TEXT NOT NULL UNIQUE
+        )
+    """)
+    connection.commit()
+    connection.close()
+
+# Call this function when the app starts
+create_tables()
+
 
 def init_db():
     conn = sqlite3.connect("database.db")
